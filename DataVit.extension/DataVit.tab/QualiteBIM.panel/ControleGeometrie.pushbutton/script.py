@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 ControleGeometrie – Contrôle qualité de la géométrie et du nommage BIM.
 

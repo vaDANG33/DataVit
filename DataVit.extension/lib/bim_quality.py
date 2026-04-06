@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 bim_quality.py – Contrôles qualité des données BIM.
 

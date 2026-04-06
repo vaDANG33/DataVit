@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 revit_utils.py – Utilitaires partagés pour l'API Revit.
 

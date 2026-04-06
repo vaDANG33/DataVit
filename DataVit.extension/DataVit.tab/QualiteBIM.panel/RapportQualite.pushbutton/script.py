@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 RapportQualite – Rapport de qualité BIM complet.
 
