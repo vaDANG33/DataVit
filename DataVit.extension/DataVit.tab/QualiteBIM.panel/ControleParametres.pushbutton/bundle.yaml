@@ -1,0 +1,4 @@
+title: Contrôle\nParamètres
+tooltip: >-
+  Vérifie que les paramètres obligatoires sont renseignés sur les éléments BIM
+  du projet courant et affiche un rapport détaillé.
