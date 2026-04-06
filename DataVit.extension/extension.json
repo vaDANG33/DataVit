@@ -1,0 +1,11 @@
+{
+    "type": "extension",
+    "name": "DataVit",
+    "description": "Extension pyRevit orientée Data + BIM pour Autodesk Revit. Export IFC, contrôles qualité data BIM, utilitaires Python partagés.",
+    "author": "vaDANG33",
+    "author_profile": "https://github.com/vaDANG33",
+    "url": "https://github.com/vaDANG33/DataVit",
+    "default_enabled": true,
+    "builtin": false,
+    "rocket_mode_compatible": true
+}

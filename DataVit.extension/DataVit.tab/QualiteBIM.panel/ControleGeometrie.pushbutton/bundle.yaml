@@ -1,0 +1,4 @@
+title: Contrôle\nGéométrie
+tooltip: >-
+  Vérifie la validité géométrique des éléments BIM (volumes et surfaces)
+  et les conventions de nommage.

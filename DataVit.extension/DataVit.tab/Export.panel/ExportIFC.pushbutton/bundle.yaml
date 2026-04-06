@@ -1,0 +1,4 @@
+title: Exporter IFC
+tooltip: >-
+  Exporte le projet courant au format IFC (IFC2x3 par défaut).
+  Utilise le dossier du modèle comme destination.

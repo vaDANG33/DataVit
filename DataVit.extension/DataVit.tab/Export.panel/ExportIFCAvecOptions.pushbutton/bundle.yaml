@@ -1,0 +1,4 @@
+title: Export IFC\nOptions
+tooltip: >-
+  Exporte le projet courant au format IFC avec sélection du dossier,
+  du nom de fichier et de la version IFC (IFC2x3 / IFC4).

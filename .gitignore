@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+
+# pyRevit build artifacts
+*.pyc
+
+# OS
+.DS_Store
+Thumbs.db

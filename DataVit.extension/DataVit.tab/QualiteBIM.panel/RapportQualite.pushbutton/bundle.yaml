@@ -1,0 +1,4 @@
+title: Rapport\nQualité
+tooltip: >-
+  Génère un rapport de qualité BIM complet couvrant les paramètres,
+  la géométrie et les conventions de nommage, et l'affiche dans une fenêtre.
