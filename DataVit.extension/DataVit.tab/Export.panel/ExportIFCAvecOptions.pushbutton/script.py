@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 ExportIFCAvecOptions – Export IFC avec sélection des options.
 

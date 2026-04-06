@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 ifc_exporter.py – Utilitaires d'export IFC pour Revit.
 

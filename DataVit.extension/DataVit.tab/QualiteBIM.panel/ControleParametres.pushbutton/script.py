@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 ControleParametres – Contrôle qualité des paramètres BIM obligatoires.
 

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 ExportIFC – Export rapide du projet courant en IFC.
 
