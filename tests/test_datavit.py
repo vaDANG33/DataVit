@@ -31,7 +31,6 @@ def _make_revit_stubs():
     IFCVersion = types.SimpleNamespace(
         IFC2x3="IFC2x3",
         IFC4="IFC4",
-        IFCSG="IFCSG",
     )
 
     class _ElementId:

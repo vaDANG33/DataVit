@@ -12,9 +12,11 @@ import os
 
 IFC_VERSION_2X3 = "IFC2x3"
 IFC_VERSION_4 = "IFC4"
-IFC_VERSION_4X3 = "IFC4x3"
 
-SUPPORTED_IFC_VERSIONS = (IFC_VERSION_2X3, IFC_VERSION_4, IFC_VERSION_4X3)
+# IFC4x3 n'est pas supporté nativement par l'API Revit IFCExportOptions.
+# Il nécessite le plugin Open Source IFC Exporter. Seuls IFC2x3 et IFC4
+# sont disponibles via DB.IFCVersion.
+SUPPORTED_IFC_VERSIONS = (IFC_VERSION_2X3, IFC_VERSION_4)
 
 DEFAULT_EXPORT_CONFIG = {
     "ifc_version": IFC_VERSION_2X3,
@@ -56,7 +58,7 @@ def validate_export_path(folder_path, filename):
         return False, "Le nom de fichier est vide."
 
     clean_name = filename if filename.lower().endswith(".ifc") else filename + ".ifc"
-    forbidden = set('\\ /: *?"<>|')
+    forbidden = set(['\\', '/', ':', '*', '?', '"', '<', '>', '|'])
     bad_chars = [c for c in os.path.basename(clean_name) if c in forbidden]
     if bad_chars:
         return False, "Nom de fichier contient des caractères invalides : {}".format(
@@ -108,11 +110,10 @@ def build_ifc_export_options(config=None):
 
     opts = DB.IFCExportOptions()
 
-    # Version IFC
+    # Version IFC (seules IFC2x3 et IFC4 sont supportées via DB.IFCVersion)
     version_map = {
         IFC_VERSION_2X3: DB.IFCVersion.IFC2x3,
         IFC_VERSION_4: DB.IFCVersion.IFC4,
-        IFC_VERSION_4X3: DB.IFCVersion.IFCSG,
     }
     opts.FileVersion = version_map.get(cfg["ifc_version"], DB.IFCVersion.IFC2x3)
 
