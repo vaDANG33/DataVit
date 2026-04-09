@@ -40,7 +40,6 @@ def _make_revit_stubs():
     class _IFCExportOptions:
         def __init__(self):
             self.FileVersion = IFCVersion.IFC2x3
-            self.ExportLinkedFiles = False
             self.ExportBaseQuantities = True
             self.WallAndColumnSplitting = False
             self.SpaceBoundaryLevel = 0
