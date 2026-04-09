@@ -21,7 +21,6 @@ SUPPORTED_IFC_VERSIONS = (IFC_VERSION_2X3, IFC_VERSION_4)
 
 DEFAULT_EXPORT_CONFIG = {
     "ifc_version": IFC_VERSION_2X3,
-    "export_linked_files": False,
     "export_base_quantities": True,
     "export_solid_model_rep": False,
     "use_family_and_type_name_for_reference": True,
@@ -118,7 +117,6 @@ def build_ifc_export_options(config=None):
     }
     opts.FileVersion = version_map.get(cfg["ifc_version"], DB.IFCVersion.IFC2x3)
 
-    opts.ExportLinkedFiles = cfg["export_linked_files"]
     opts.ExportBaseQuantities = cfg["export_base_quantities"]
     opts.WallAndColumnSplitting = cfg["split_walls_and_columns_by_level"]
     opts.SpaceBoundaryLevel = 0
