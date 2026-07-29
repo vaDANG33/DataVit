@@ -6,6 +6,7 @@ Permet de choisir le dossier de destination, le nom du fichier et
 la version IFC (IFC2x3 ou IFC4) via des boîtes de dialogue pyRevit.
 """
 from pyrevit import forms, revit, script
+import Autodesk.Revit.DB as DB 
 
 from ifc_exporter import (
     IFC_VERSION_2X3,
@@ -24,6 +25,10 @@ logger = script.get_logger()
 output = script.get_output()
 
 doc = revit.doc
+
+opts = DB.IFCExportOptions()
+attrs = [a for a in dir(opts) if not a.startswith("_")]
+output.print_md("**Attributs disponibles de IFCExportOptions :**\n\n" + "\n".join("- `{}`".format(a) for a in attrs))
 
 # --- Sélection du dossier ---------------------------------------------------
 default_folder = get_default_export_folder(doc)
@@ -58,6 +63,15 @@ output.print_md("## Export IFC avec Options")
 output.print_md("**Dossier :** `{}`".format(folder))
 output.print_md("**Fichier  :** `{}.ifc`".format(filename))
 output.print_md("**Version  :** `{}`".format(version))
+
+t = DB.Transaction(doc, "Export IFC avec options")
+t.Start()
+try:
+    success, result = export_ifc(doc, folder, filename, config=config)
+    t.Commit()
+except Exception as e:
+    t.RollBack()
+    success, result = False, str(e)
 
 success, result = export_ifc(doc, folder, filename, config=config)
 
